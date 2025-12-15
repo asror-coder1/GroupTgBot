@@ -1,7 +1,9 @@
 package group_tg;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class Mybot extends TelegramLongPollingBot {
     MyBotService myBotService = new MyBotService();
@@ -17,6 +19,20 @@ public class Mybot extends TelegramLongPollingBot {
             String firstName = update.getMessage().getChat().getFirstName();
             String lastName = update.getMessage().getChat().getLastName();
 
+
+
+        } else if (update.hasCallbackQuery()) {
+            CallbackQuery callbackQuery = update.getCallbackQuery();
+            String data = callbackQuery.getData();
+            Long chatId = callbackQuery.getMessage().getChatId();
+
+            if (data.equals("UzbektiliId")) {
+                try {
+                    execute(myBotService.sendMessage(chatId));
+                } catch (TelegramApiException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
     }
 
