@@ -12,6 +12,7 @@ public class Main {
             TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
             telegramBotsApi.registerBot(new Mybot());
             System.out.println("run");
+
         } catch (TelegramApiException e) {
             throw new RuntimeException(e);
         }
