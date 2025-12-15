@@ -13,7 +13,7 @@ public class Mybot extends TelegramLongPollingBot {
             Long chatId = update.getMessage().getChatId();
             String text = update.getMessage().getText();
 
-//            foydalanuvchidan ma'lumot olish
+//            foydalanuvchidan ma'lum
 
             String firstName = update.getMessage().getChat().getFirstName();
             String lastName = update.getMessage().getChat().getLastName();
