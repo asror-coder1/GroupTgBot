@@ -35,8 +35,4 @@ public class MyBotService {
         return sendMessage;
     }
 
-
-
 }
-
-
