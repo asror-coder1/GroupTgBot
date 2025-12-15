@@ -9,7 +9,7 @@ import java.util.List;
 
 public class MyBotService {
 
-    public SendMessage sendMessage(Long chatId){
+    public SendMessage menu(Long chatId){
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
         sendMessage.setText("Bo'limni tanlang");
@@ -35,3 +35,5 @@ public class MyBotService {
     }
 
 }
+
+

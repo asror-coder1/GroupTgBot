@@ -28,7 +28,7 @@ public class Mybot extends TelegramLongPollingBot {
 
             if (data.equals("UzbektiliId")) {
                 try {
-                    execute(myBotService.sendMessage(chatId));
+                    execute(myBotService.menu(chatId));
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
