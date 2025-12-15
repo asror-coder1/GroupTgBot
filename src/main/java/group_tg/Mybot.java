@@ -18,6 +18,7 @@ public class Mybot extends TelegramLongPollingBot {
             String firstName = update.getMessage().getChat().getFirstName();
             String lastName = update.getMessage().getChat().getLastName();
 
+
             if (text.equals("/start")){
                 try {
                     execute(myBotService.Language(chatId));
