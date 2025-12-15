@@ -21,6 +21,7 @@ public class MyBotService {
         r1.add("\uD83D\uDCDA Kitoblar");
         r1.add("⭐\uFE0F Sevimlilar");
 
+
         KeyboardRow r2 = new KeyboardRow();
         r2.add("\uD83D\uDD0D Qidirish");
         r2.add("ℹ\uFE0F Bot haqida");
@@ -33,6 +34,8 @@ public class MyBotService {
         sendMessage.setReplyMarkup(markup);
         return sendMessage;
     }
+
+
 
 }
 
