@@ -1,49 +1,40 @@
 package group_tg;
 
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MyBotService {
 
-    public SendMessage Language(Long chatId) {
+    public SendMessage menu(Long chatId){
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
-        sendMessage.setText("assalomu aleykum hurmatli mijoz botimizga hush kelibsiz!!!");
+        sendMessage.setText("Bo'limni tanlang");
 
-        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
-        List<List<InlineKeyboardButton>> rowList = new ArrayList<>();
+        ReplyKeyboardMarkup markup = new ReplyKeyboardMarkup();
+        markup.setResizeKeyboard(true);
 
-        List<InlineKeyboardButton> row = new ArrayList<>();
-        InlineKeyboardButton button = new InlineKeyboardButton();
-        button.setText("\uD83C\uDDFA\uD83C\uDDFFUzbek");
-        button.setCallbackData("UzbektiliId");
-        row.add(button);
-        rowList.add(row);
+        KeyboardRow r1 = new KeyboardRow();
+        r1.add("\uD83D\uDCDA Kitoblar");
+        r1.add("⭐\uFE0F Sevimlilar");
 
 
-        row = new ArrayList<>();
-        button = new InlineKeyboardButton();
-        button.setText("\uD83C\uDDFA\uD83C\uDDF8English");
-        button.setCallbackData("EnglishtiliId");
-        row.add(button);
-        rowList.add(row);
+        KeyboardRow r2 = new KeyboardRow();
+        r2.add("\uD83D\uDD0D Qidirish");
+        r2.add("ℹ\uFE0F Bot haqida");
 
-
-        inlineKeyboardMarkup.setKeyboard(rowList);
-        sendMessage.setReplyMarkup(inlineKeyboardMarkup);
+        List<KeyboardRow> rows = new ArrayList<>();
+        rows.add(r1);
+        rows.add(r2);
+        markup.setKeyboard(rows);
+        markup.setResizeKeyboard(true);
+        sendMessage.setReplyMarkup(markup);
         return sendMessage;
     }
 
-
-
-
-
-
-
-
-
 }
+
+
