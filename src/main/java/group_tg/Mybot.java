@@ -26,6 +26,8 @@ public class Mybot extends TelegramLongPollingBot {
             String data = callbackQuery.getData();
             Long chatId = callbackQuery.getMessage().getChatId();
 
+
+
             if (data.equals("UzbektiliId")) {
                 try {
                     execute(myBotService.menu(chatId));
